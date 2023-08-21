@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Dashboard || Homigon</title>
+
+
+    <!-- MATERIAL ICONS -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+
+    <!-- FONTAWESOME CSS LINK -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- CUSTOM CSS LINK -->
+    <link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+
+    <header>
+        <figure class="logo">
+            <a href="index.html"><img src="assets/images/logo.png" alt="homigon-logo"></a>
+        </figure>
+        <div class="action-btn">
+            <button>Sign Out</button>
+        </div>
+    </header>
+
+
+    <main>
+        <!-- sidebar starts-->
+        <aside class="sidebar">
+            <ul class="menu-list">
+                <li class="menu-item"><a href="index.html" class="active-page">Dashboard</a></li>
+                <li class="menu-item"><a href="users.html" class="not-active-page">Users</a></li>
+                <li class="menu-item"><a href="agents.html" class="not-active-page">Agents</a></li>
+                <li class="menu-item"><a href="properties.html" class="not-active-page">Properties</a></li>
+                <li class="menu-item"><a href="settings.html" class="not-active-page">Settings</a></li>
+                
+            </ul>
+        </aside>
+        <!-- sidebar ends-->
+
+
+        <!-- main section starts-->
+
+        <section>
+            <div class="summary">
+                <h1>Summary</h1>
+                <div class="summary-wrapper">
+                    <div class="summary-card">
+                        <h2>All Users</h2>
+                        <h1>1</h1>
+                    </div>
+                    <div class="summary-card">
+                        <h2>Agents</h2>
+                        <h1>1</h1>
+                    </div>
+                    <div class="summary-card">
+                        <h2>Listings</h2>
+                        <h1>1</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listing_activities">
+
+                <div class="inactive_listing">
+                    <h2>Inactive Listing</h2>
+                    <div class="input-search">
+                        <input type="search" name="search" id="" placeholder="Search">
+                        <button type="submit">
+                            <span class="material-icons search">search</span>
+                        </button>
+                    </div>
+                    <div class="property-card">
+                        <div class="img-background">
+    
+                            <img src="assets/images/image-1.png" alt="">
+    
+                            <div class="card--details">
+                                <div class="card--icons">
+                                    <div class="card--icon">
+                                        <div class="circle">
+                                            <img src="assets/images/bed-icon.png" alt="">
+                                        </div>
+                                        <h3>4</h3>
+                                    </div>
+                                    <div class="card--icon">
+                                        <div class="circle">
+                                            <img src="assets/images/bathtub-icon.png" alt="">
+                                        </div>
+                                        <h3>4</h3>
+                                    </div>
+                                    <div class="card--icon">
+                                        <div class="circle">
+                                            <img src="assets/images/bathroom-icon.png" alt="">
+                                        </div>
+                                        <h3>4</h3>
+                                    </div>
+                                </div>
+                                <h2 class="card--price">N100,000</h2>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <h2>4bedroom Block of Flats in Port Harcourt for Sale</h2>
+                            <div class="location-posted-time">
+                                <div class="location">
+                                    <span class="material-icons icon--location">location_on</span>Portharcourt
+                                </div>
+                                <div class="posted-time">
+                                    <span class="material-icons icon--posted-time">watch_later</span>2h
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="see-all">
+                        <button class="see-all-btn" id="see-all">See All</button>
+                    </div>
+                </div>
+
+                <div class="recent_activities">
+                    <div class="top">
+                        <h2>Recent Activities</h2>
+                        <div class="chart-control-btns">
+                            <button><h3>Page Visits</h3></button>
+                            <button><h3>Sign Ups</h3></button>
+                            <select name="" id="">
+                                <option value="week">This Week</option>
+                                <option value="month">This Month</option>
+                                <option value="year">This Year</option>
+                            </select>
+                        </div>
+  
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+    </main>        
+
+    <!-- inactive modal -->
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="inactive-modal">
+        <div class="inactive-content">
+            <h1>Inactive Listing</h1>
+            <div class="input-search">
+                <input type="search" name="search" id="" placeholder="Search">
+                <button type="submit" id="name"><span class="material-icons search">search</span></button>
+            </div>
+
+            <div class="card-container">
+                <div class="property-card">
+                    <div class="img-background">
+
+                        <img src="assets/images/image-1.png" alt="">
+
+                        <div class="card--details">
+                            <div class="card--icons">
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bed-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bathtub-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bathroom-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                            </div>
+                            <h2 class="card--price">N100,000</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <h2>4bedroom Block of Flats in Port Harcourt for Sale</h2>
+                        <div class="location-posted-time">
+                            <div class="location">
+                                <span class="material-icons icon--location">location_on</span>Portharcourt
+                            </div>
+                            <div class="posted-time">
+                                <span class="material-icons icon--posted-time">watch_later</span>2h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <div class="img-background">
+
+                        <img src="assets/images/image-1.png" alt="">
+
+                        <div class="card--details">
+                            <div class="card--icons">
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bed-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bathtub-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bathroom-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                            </div>
+                            <h2 class="card--price">N100,000</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <h2>4bedroom Block of Flats in Port Harcourt for Sale</h2>
+                        <div class="location-posted-time">
+                            <div class="location">
+                                <span class="material-icons icon--location">location_on</span>Portharcourt
+                            </div>
+                            <div class="posted-time">
+                                <span class="material-icons icon--posted-time">watch_later</span>2h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <div class="img-background">
+
+                        <img src="assets/images/image-1.png" alt="">
+
+                        <div class="card--details">
+                            <div class="card--icons">
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bed-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bathtub-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bathroom-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                            </div>
+                            <h2 class="card--price">N100,000</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <h2>4bedroom Block of Flats in Port Harcourt for Sale</h2>
+                        <div class="location-posted-time">
+                            <div class="location">
+                                <span class="material-icons icon--location">location_on</span>Portharcourt
+                            </div>
+                            <div class="posted-time">
+                                <span class="material-icons icon--posted-time">watch_later</span>2h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <div class="img-background">
+
+                        <img src="assets/images/image-1.png" alt="">
+
+                        <div class="card--details">
+                            <div class="card--icons">
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bed-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bathtub-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bathroom-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                            </div>
+                            <h2 class="card--price">N100,000</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <h2>4bedroom Block of Flats in Port Harcourt for Sale</h2>
+                        <div class="location-posted-time">
+                            <div class="location">
+                                <span class="material-icons icon--location">location_on</span>Portharcourt
+                            </div>
+                            <div class="posted-time">
+                                <span class="material-icons icon--posted-time">watch_later</span>2h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <div class="img-background">
+
+                        <img src="assets/images/image-1.png" alt="">
+
+                        <div class="card--details">
+                            <div class="card--icons">
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bed-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bathtub-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bathroom-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                            </div>
+                            <h2 class="card--price">N100,000</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <h2>4bedroom Block of Flats in Port Harcourt for Sale</h2>
+                        <div class="location-posted-time">
+                            <div class="location">
+                                <span class="material-icons icon--location">location_on</span>Portharcourt
+                            </div>
+                            <div class="posted-time">
+                                <span class="material-icons icon--posted-time">watch_later</span>2h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <div class="img-background">
+
+                        <img src="assets/images/image-1.png" alt="">
+
+                        <div class="card--details">
+                            <div class="card--icons">
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bed-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bathtub-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bathroom-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                            </div>
+                            <h2 class="card--price">N100,000</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <h2>4bedroom Block of Flats in Port Harcourt for Sale</h2>
+                        <div class="location-posted-time">
+                            <div class="location">
+                                <span class="material-icons icon--location">location_on</span>Portharcourt
+                            </div>
+                            <div class="posted-time">
+                                <span class="material-icons icon--posted-time">watch_later</span>2h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <div class="img-background">
+
+                        <img src="assets/images/image-1.png" alt="">
+
+                        <div class="card--details">
+                            <div class="card--icons">
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bed-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bathtub-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                                <div class="card--icon">
+                                    <div class="circle">
+                                        <img src="assets/images/bathroom-icon.png" alt="">
+                                    </div>
+                                    <h3>4</h3>
+                                </div>
+                            </div>
+                            <h2 class="card--price">N100,000</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <h2>4bedroom Block of Flats in Port Harcourt for Sale</h2>
+                        <div class="location-posted-time">
+                            <div class="location">
+                                <span class="material-icons icon--location">location_on</span>Portharcourt
+                            </div>
+                            <div class="posted-time">
+                                <span class="material-icons icon--posted-time">watch_later</span>2h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+
+
+
+
+
+    <!-- FONTAWESOME JS LINK -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- CUSTOM JS LINK -->
+    <script src="assets/main.js"></script>
+</body>
+</html>

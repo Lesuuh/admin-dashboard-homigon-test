@@ -1,0 +1,43 @@
+
+
+COLOURS
+black - #333
+green - #33cca8
+light-green - #e6f0ee
+orange - #e3eb14
+light-orange - #FEF9E6
+
+FONT
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+BUTTONS
+width - 144px
+height - 56px
+
+INPUT TAGS
+height - 56px
+
+
+FONTS
+for H1
+font-weight - 700685
+font-size - 36px
+line-height - 45px
+
+for H2
+font-weight - 700
+font-sizee - 20px
+line-height - 25px
+
+for H3
+font-weight - 600
+font-sizee - 18px
+line-height - 22.5px
+
+for p
+font-weight - 400
+font-sizee - 16px
+line-height - 20px
+
+

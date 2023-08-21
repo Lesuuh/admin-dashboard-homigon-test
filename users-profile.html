@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin-Dashboard || Homigon</title>
+    <!-- Bootstrap 5 CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" /> -->
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" /> -->
+
+    <!-- MATERIAL ICONS -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+
+    <!-- FONTAWESOME CSS LINK -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- CUSTOM CSS LINK -->
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <figure class="logo">
+        <a href="index.html"
+          ><img src="assets/images/logo.png" alt="homigon-logo"
+        /></a>
+      </figure>
+      <div class="action-btn">
+        <button>Sign Out</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- side bar starts -->
+      <aside class="sidebar">
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a href="index.html" class="not-active-page">Dashboard</a>
+          </li>
+          <li class="menu-item">
+            <a href="users.html" class="active-page">Users</a>
+          </li>
+          <li class="menu-item">
+            <a href="agents.html" class="not-active-page">Agents</a>
+          </li>
+          <li class="menu-item">
+            <a href="properties.html" class="not-active-page">Properties</a>
+          </li>
+          <li class="menu-item">
+            <a href="settings.html" class="not-active-page">Settings</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- sidebar ends -->
+
+      <section class="users-profile">
+        <div class="control-btns">
+            <button>
+                <span class="material-icons">keyboard_backspace</span>
+                Back
+            </button>
+            <button id="edit-account">
+                <span class="material-icons">mode_edit_outline</span>
+                Edit Account
+            </button>
+        </div>
+        <h1 class="heading">Profile</h1>
+        <div class="profile-page">
+            <div class="profile">
+                <img src="assets/images/profile-photo.png" alt="">
+                <div class="details">
+                    <p>Name: <span> nameonaccount</span></p>
+                    <p>Email: <span> personsemail@email.com</span></p>
+                    <p>Phone Number: <span> 0812346789</span></p>
+                    <p>Account Type: <span>Individual</span></p>
+                    <p>Status: <span>Active</span></p>
+                    <p>Agent Category: <span>N/A</span></p>
+                    <p>Referral Code: <span>xxxxxxx</span></p>
+                </div>
+                <div class="profile-btns">
+                    <button>Delete</button>
+                    <button>Suspend</button>
+                </div>
+            </div>
+            <div class="active-date">
+                <div><h3>Date Joined</h3>
+                    <p class="date">2/24/2023 <span class="time">9:30pm</span></p>
+                </div>
+                <div><h3>Last Seen</h3>
+                    <p class="date">2/24/2023 <span class="time">9:30pm</span></p>
+                </div>
+            </div>
+            <div class="conversation">
+                <h3>Referral: 1</h3>
+                <div class="conversation-side">
+                    <h3 class="head">Conversation</h3>
+                    <div class="nameofuserContainer">
+                      <h3 class="listhead"><span>Name of User</span></h3>
+                      <h3 class="listhead"><span>Name of User</span></h3>
+                      <h3 class="listhead"><span>Name of User</span></h3>
+                      <h3 class="listhead"><span>Name of User</span></h3>
+                      <h3 class="listhead"><span>Name of User</span></h3>
+                      <h3 class="listhead"><span>Name of User</span></h3>
+                      <h3 class="listhead"><span>Name of User</span></h3>
+                    </div>
+                </div>
+                <!-- chats -->
+                <div class="chats">
+                  <div class="chat-head">
+                    <p><span class="material-icons" id="back">keyboard_backspace</span></p>
+                    <h3>User xyz name. surname</h3>
+                  </div>
+                  <div class="chat-convo">
+                    <div class="incoming">
+                      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus ligula, mollis ut aliquet nec, sodales eu ante. Cras pellentesque ac ligula sed laoreet</>
+                      <p>16/06/2022  <span>09:30</span></p>
+                    </div>
+                    <div class="outgoing">
+                      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus ligula, mollis ut aliquet nec, sodales eu ante. Cras pellentesque ac ligula sed laoreet</h4>
+                      <p>16/06/2022  <span>09:30</span></p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-backdrop"></div>
+        <div class="edit-account-modal">
+          <div class="create-account-modal-content edit-account-modal-content">
+            <h1 style="text-align: center;">Edit Account</h1>
+            <form action="#" method="post">
+              <div class="inputs">
+                <input
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  placeholder="First Name"
+                  required
+                />
+                <input
+                  type="text"
+                  name="lastname"
+                  id="lastname"
+                  placeholder="Last Name"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  required
+                />
+                <input
+                  type="text"
+                  name="phonenumber"
+                  id="phonenumber"
+                  placeholder="Phone Number"
+                  required
+                />
+              </div>
+              <div class="submit">
+                <input type="submit" value="Done" id="submit-btn"/>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <!-- FONTAWESOME JS LINK -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+      integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="assets/users-profile.js"></script>
+    <!-- CUSTOM JS LINK -->
+    <!-- <script src="assets/user.js"></script> -->
+    <!-- <script src="assets/main.js"></script> -->
+  </body>
+</html>
