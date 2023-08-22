@@ -195,6 +195,10 @@ input[type="search"]::-moz-search-cancel-button {
   display: none;
 }
 
+.card-container a{
+  color: #333;
+}
+
 /* HEADER */
 
 header {
@@ -997,7 +1001,7 @@ td {
   /* display: none; */
 }
 #property-page {
-  display: none;
+  /* display: none; */
 }
 .properties-section::-webkit-scrollbar {
   width: 4px; /* Set the width of the scrollbar */
@@ -1047,6 +1051,7 @@ td {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
 }
 
 .property-details {
