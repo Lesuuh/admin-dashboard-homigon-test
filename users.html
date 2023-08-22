@@ -46,11 +46,21 @@
       <!-- side bar starts -->
       <aside class="sidebar">
         <ul class="menu-list">
-          <li class="menu-item"><a href="index.html" class="not-active-page">Dashboard</a></li>
-          <li class="menu-item"><a href="users.html" class="active-page">Users</a></li>
-          <li class="menu-item"><a href="agents.html" class="not-active-page">Agents</a></li>
-          <li class="menu-item"><a href="properties.html" class="not-active-page">Properties</a></li>
-          <li class="menu-item"><a href="settings.html" class="not-active-page">Settings</a></li>
+          <li class="menu-item">
+            <a href="index.html" class="not-active-page">Dashboard</a>
+          </li>
+          <li class="menu-item">
+            <a href="users.html" class="active-page">Users</a>
+          </li>
+          <li class="menu-item">
+            <a href="agents.html" class="not-active-page">Agents</a>
+          </li>
+          <li class="menu-item">
+            <a href="properties.html" class="not-active-page">Properties</a>
+          </li>
+          <li class="menu-item">
+            <a href="settings.html" class="not-active-page">Settings</a>
+          </li>
         </ul>
       </aside>
 
@@ -80,15 +90,15 @@
               ></i>
             </button>
           </div>
+
           <div class="filter" id="open-filter">
             <img src="assets/images/filter.png" alt="" />
             <h3>Filter</h3>
           </div>
         </div>
-
         <!-- filter modal -->
         <div class="filter-modal">
-          <form action="">
+          <form action="" class="filter-form">
             <table class="filter-table">
               <thead>
                 <tr>
@@ -143,11 +153,51 @@
           </thead>
           <tbody id="tbody">
             <tr class="table-row">
-              <td>Name on Account</td>
+              <td class="nameonaccount">Name on Account</td>
               <td>08123456789</td>
               <td>personsname@gmail.com</td>
               <td>DD/MM/YYYY</td>
-              <td>individual</td>
+              <td>Agent</td>
+              <td>
+                <span class="material-icons-outlined more-vert">more_vert</span>
+              </td>
+            </tr>
+            <tr class="table-row">
+              <td class="nameonaccount">Name on Account</td>
+              <td>08123456789</td>
+              <td>personsname@gmail.com</td>
+              <td>DD/MM/YYYY</td>
+              <td>Individual</td>
+              <td>
+                <span class="material-icons-outlined more-vert">more_vert</span>
+              </td>
+            </tr>
+            <tr class="table-row">
+              <td class="nameonaccount">Name on Account</td>
+              <td>08123456789</td>
+              <td>personsname@gmail.com</td>
+              <td>DD/MM/YYYY</td>
+              <td>Agent</td>
+              <td>
+                <span class="material-icons-outlined more-vert">more_vert</span>
+              </td>
+            </tr>
+            <tr class="table-row">
+              <td class="nameonaccount">Name on Account</td>
+              <td>08123456789</td>
+              <td>personsname@gmail.com</td>
+              <td>DD/MM/YYYY</td>
+              <td>Individual</td>
+              <td>
+                <span class="material-icons-outlined more-vert">more_vert</span>
+              </td>
+            </tr>
+            <tr class="table-row">
+              <td class="nameonaccount">Name on Account</td>
+              <td>08123456789</td>
+              <td>personsname@gmail.com</td>
+              <td>DD/MM/YYYY</td>
+              <td>Agent</td>
               <td>
                 <span class="material-icons-outlined more-vert">more_vert</span>
               </td>
@@ -162,7 +212,6 @@
         </div>
 
         <!-- CREATE ACCOUNT MODAL -->
-        <div class="modal-backdrop"></div>
         <div class="create-account-modal">
           <div class="create-account-modal-content">
             <h1>Create Account</h1>
@@ -225,9 +274,13 @@
             </form>
           </div>
         </div>
+
+        <!-- -------- SUCCESS MODAL ---------- -->
         <div class="success-modal">
-          <h1>Account Created</h1>
-          <img src="assets/images/grommet-icons_status-good.png" alt="" />
+          <div class="success-modal-content">
+            <h1>Account Created</h1>
+            <img src="assets/images/grommet-icons_status-good.png" alt="" />
+          </div>
         </div>
       </section>
     </main>
