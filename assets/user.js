@@ -128,11 +128,6 @@
 //   searchFunction();
 // });
 
-
-
-
-
-
 // ----------------FILTER MODAL-------------------
 const openFilter = document.querySelector("#open-filter");
 const filterModal = document.querySelector(".filter-modal");
@@ -165,7 +160,9 @@ window.addEventListener("click", (event) => {
 
 // CREATE ACCOUNT MODAL
 const createAccountModal = document.querySelector(".create-account-modal");
-const createAccountModalContent = document.querySelector(".create-account-modal-content")
+const createAccountModalContent = document.querySelector(
+  ".create-account-modal-content"
+);
 const createAccountBtn = document.getElementById("add-account");
 
 createAccountBtn.addEventListener("click", (event) => {
@@ -178,23 +175,24 @@ function closeModal() {
   successModal.style.display = "none";
 }
 
-
-document.addEventListener("click", (event)=>{
-  if(event.target === createAccountModal && !createAccountModalContent.contains(event.target)){
-    closeModal()
+document.addEventListener("click", (event) => {
+  if (
+    event.target === createAccountModal &&
+    !createAccountModalContent.contains(event.target)
+  ) {
+    closeModal();
   }
-})
+});
 
-document.addEventListener("keydown", (event)=>{
-  if(event.key === "Escape"){
-    closeModal()
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeModal();
   }
-})
-
+});
 
 // SUCCESS MODAL
 const successModal = document.querySelector(".success-modal");
-const successModalContent = document.querySelector(".success-modal-content")
+const successModalContent = document.querySelector(".success-modal-content");
 const submitBtn = document.querySelector("#submit-btn");
 
 submitBtn.addEventListener("click", () => {
@@ -202,21 +200,48 @@ submitBtn.addEventListener("click", () => {
   createAccountModal.style.display = "none";
 });
 
-
-document.addEventListener("click", (event)=>{
-  if(event.target === successModal && !successModalContent.contains(event.target)){
-    console.log("wjyyhd")
-    closeModal()
+document.addEventListener("click", (event) => {
+  if (
+    event.target === successModal &&
+    !successModalContent.contains(event.target)
+  ) {
+    console.log("wjyyhd");
+    closeModal();
   }
-})
+});
 
-document.addEventListener("keydown", (event)=>{
-  if(event.key === "Escape"){
-    closeModal()
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeModal();
   }
-})
+});
 
+const iconBtn = document.querySelectorAll(".more-vert");
+let openEditDelete = null;
 
+iconBtn.forEach((icon) => {
+  icon.addEventListener("click", (event) => {
+    const parentContainer = icon.closest("#closest-container");
+    const editDelete = parentContainer.querySelector("#edit-delete");
 
+    if (openEditDelete && openEditDelete !== editDelete) {
+      openEditDelete.style.display = "none";
+    }
 
+    editDelete.style.display =
+      editDelete.style.display === "block" ? "none" : "block";
 
+    openEditDelete = editDelete.style.display === "block" ? editDelete : null;
+
+    event.stopPropagation();
+  });
+});
+
+document.addEventListener("click", (event) => {
+  const editDeletes = document.querySelectorAll("#edit-delete");
+  editDeletes.forEach((editDelete) => {
+    if (!editDelete.contains(event.target)) {
+      editDelete.style.display = "none";
+    }
+  });
+});

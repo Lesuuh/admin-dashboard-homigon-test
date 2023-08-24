@@ -504,7 +504,7 @@ section {
   align-self: flex-start;
 }
 
-.search-users{
+.search-users {
   position: relative;
 }
 
@@ -567,7 +567,8 @@ td {
   padding: 0 1.5rem;
 }
 
-.nameonaccount{
+.nameonaccount a {
+  font-size: 1rem;
   color: #ffc700;
   font-weight: 700;
 }
@@ -577,13 +578,25 @@ td {
   color: #ffc700;
 }
 
-.edit-delete {
-  position: relative;
+#edit-delete {
+  position: absolute;
+  display: none;
+  /* padding: 1rem; */
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
 }
-.edit-delete button {
-  border: none;
-  outline: none;
-  background: none;
+
+.edit,
+.delete {
+  padding: 0.5rem 1.5rem;
+  width: 6rem;
+  height: 3rem;
+  cursor: pointer;
+}
+.edit:hover,
+.delete:hover {
+  background: #effaf8;
 }
 
 .modify-dropdown {
@@ -655,7 +668,7 @@ td {
   position: relative;
 }
 
-.filter-form{
+.filter-form {
   position: absolute;
   z-index: 2222;
 }
@@ -715,7 +728,6 @@ td {
   width: 30rem;
   border-radius: 0.5rem;
   background: #fbfbfb;
-  /* box-shadow: 0px 4px 4px 0px rgba(242, 68, 68, 0.25); */
   height: 40rem;
 }
 .create-account-modal-content h1 {
@@ -817,7 +829,7 @@ td {
 .profile-page {
   display: grid;
   grid-template-columns: 20rem 200px 1fr;
-  padding: 3rem 2.5rem;
+  padding-block: 3rem;
 }
 
 .profile-page .details p {
@@ -889,17 +901,34 @@ td {
 }
 
 .nameofuserContainer {
-  width: 31.2rem;
-  height: 31.9rem;
+  /* width: 30rem; */
+  height: 30rem;
   border-radius: 0.5rem;
   background: var(--secondary-green, #effaf8);
+  overflow-y: scroll;
+}
+
+.nameofuserContainer::-webkit-scrollbar {
+  width: 4px; /* Set the width of the scrollbar */
+}
+
+.nameofuserContainer::-webkit-scrollbar-track {
+  background: #999; /* Set the background color of the track */
+}
+
+.nameofuserContainer::-webkit-scrollbar-thumb {
+  background: #333; /* Set the color of the thumb (scrollbar handle) */
+  border-radius: 6px; /* Round the edges of the thumb */
+}
+.nameofuserContainer::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Change the thumb color on hover */
 }
 
 .listhead {
   height: 4rem;
-  width: 27.6rem;
-  padding: 1.3rem 3rem;
-  margin-left: 1rem;
+  width: 23.6rem;
+  padding: 1.3rem 1rem;
+  margin-inline: 0.5rem;
   border-bottom: #33cca8;
   cursor: pointer;
   border-bottom: 1px solid var(--primary-green, #33cca8);
@@ -909,9 +938,10 @@ td {
   display: none;
   padding: 1.4rem;
   margin-top: 4.8rem;
-  width: 31.2rem;
+  width: 27rem;
   height: 31.9rem;
   border-radius: 0.5rem;
+  /* overflow-y: scroll; */
   background: var(--secondary-green, #effaf8);
 }
 
@@ -925,12 +955,36 @@ td {
   display: flex;
   justify-content: flex-start;
   margin-block-end: 2.5rem;
-}
-.chat-head h3 {
-  margin-left: 8rem;
+  gap: 4rem;
 }
 
 .chat-convo {
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+  margin-block: 0.5rem;
+  height: 25rem;
+  width: 100%;
+  overflow-y: auto;
+}
+/* .chat-convo::-webkit-scrollbar-track{
+  width: 4px;
+} */
+
+.chat-convo::-webkit-scrollbar {
+  width: 4px; /* Set the width of the scrollbar */
+}
+
+.chat-convo::-webkit-scrollbar-track {
+  background: #999; /* Set the background color of the track */
+}
+
+.chat-convo::-webkit-scrollbar-thumb {
+  background: #333; /* Set the color of the thumb (scrollbar handle) */
+  border-radius: 6px; /* Round the edges of the thumb */
+}
+.chat-convo::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Change the thumb color on hover */
 }
 
 .incoming {
@@ -942,13 +996,13 @@ td {
   flex-flow: column;
   color: #000;
   font-weight: 400;
+  max-width: 23rem;
 }
 .incoming p,
 .outgoing p {
   margin-top: 1rem;
 }
 .outgoing {
-  margin-block-start: 1rem;
   border-radius: 0.3rem;
   background: #fef9e6;
   padding: 1rem;
@@ -957,14 +1011,35 @@ td {
   flex-flow: column;
   color: #000;
   font-weight: 400;
+  max-width: 23rem;
 }
 
 .outgoing p {
   align-self: flex-end;
 }
 
-.edit-account-modal-content {
+.edit-account-modal {
   display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+.edit-account-modal-content {
+  padding: 1rem 2.5rem;
+  width: 30rem;
+  border-radius: 0.5rem;
+  background: #fbfbfb;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
 }
 
 /* ----------PROPERTIES--------- */
@@ -1009,6 +1084,7 @@ td {
 #property-page {
   /* display: none; */
 }
+
 .properties-section::-webkit-scrollbar {
   width: 4px; /* Set the width of the scrollbar */
 }
