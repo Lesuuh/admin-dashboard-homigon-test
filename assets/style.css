@@ -846,24 +846,24 @@ td {
   justify-content: space-between;
 }
 
-.profile-page button:nth-child(1) {
+.profile-page .profile-btns-delete {
   background: #ffc700;
   color: #fff;
+  border: none;
 }
 
-.profile-page button:nth-child(1):hover {
+.profile-page .profile-btns-delete:hover {
   background: #f3bf03;
 }
-.profile-page button:nth-child(2) {
+.profile-page .profile-btns-suspend {
   background: #fff;
   color: #333;
   border: 2px solid #ffc700;
 }
-.profile-page button:nth-child(2):hover {
+.profile-page .profile-btns-suspend:hover {
   background: #fcfcfc;
 }
-.profile-page button {
-  border: none;
+.profile-page .profile-btns button {
   outline: 0;
   display: flex;
   width: 9rem;
@@ -1390,4 +1390,12 @@ th:last-child {
 .pagination ul li:last-child:hover {
   color: #ffc700;
   /* background: #20B2AA; */
+}
+
+.agent-profile-inactive_listing {
+  margin-block: 2.56rem;
+}
+
+.agent-profile-submit-button {
+  background: #ffc700;
 }

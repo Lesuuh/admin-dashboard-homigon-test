@@ -1,56 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin-Dashboard || Homigon</title>
+    <!-- Bootstrap 5 CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" /> -->
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" /> -->
+
+    <!-- MATERIAL ICONS -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
 
     <!-- FONTAWESOME CSS LINK -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- CUSTOM CSS LINK -->
-    <link rel="stylesheet" href="assets/style.css">
-
-</head>
-<body>
-
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
     <header>
-        <figure class="logo">
-            <a href="index.html"><img src="assets/images/logo.png" alt="homigon-logo"></a>
-        </figure>
-        <div class="action-btn">
-            <button>Sign Out</button>
-        </div>
+      <figure class="logo">
+        <a href="index.html"
+          ><img src="assets/images/logo.png" alt="homigon-logo"
+        /></a>
+      </figure>
+      <div class="action-btn">
+        <button>Sign Out</button>
+      </div>
     </header>
 
-    
     <main>
-        <aside class="sidebar">
-            <ul class="menu-list">
-                <li class="menu-item"><a href="index.html" class="not-active-page">Dashboard</a></li>
-                <li class="menu-item"><a href="users.html" class="not-active-page">Users</a></li>
-                <li class="menu-item"><a href="agents.html" class="active-page">Agents</a></li>
-                <li class="menu-item"><a href="properties.html" class="not-active-page">Properties</a></li>
-                <li class="menu-item"><a href="settings.html" class="not-active-page">Settings</a></li>
-                
-            </ul>
-        </aside>
+      <!-- side bar starts -->
+      <aside class="sidebar">
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a href="index.html" class="not-active-page">Dashboard</a>
+          </li>
+          <li class="menu-item">
+            <a href="users.html" class="not-active-page">Users</a>
+          </li>
+          <li class="menu-item">
+            <a href="agents.html" class="active-page">Agents</a>
+          </li>
+          <li class="menu-item">
+            <a href="properties.html" class="not-active-page">Properties</a>
+          </li>
+          <li class="menu-item">
+            <a href="settings.html" class="not-active-page">Settings</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- sidebar ends -->
+
+      <section class="users-section">
+        <h1>Agents</h1>
+        <div class="users-card">
+          <div class="user-card">
+            <h2>Property Agent</h2>
+            <h1>1</h1>
+          </div>
+          <div class="user-card">
+            <h2>Propert Owner</h2>
+            <h1>1</h1>
+          </div>
+          <button class="btns" id="add-account">Add Account</button>
+        </div>
+
+        <div class="search-users">
+          <div class="search">
+            <input type="search" name="" id="search-input" class="search"  placeholder="search"/>
+            <button type="submit" class="search-btn" id="filter-search-btn">
+              <i
+                class="fa-solid fa-magnifying-glass fa-2xl"
+                style="color: #ffffff"
+              ></i>
+            </button>
+          </div>
+
+          <div class="filter" id="open-filter">
+            <img src="assets/images/filter.png" alt="" />
+            <h3>Filter</h3>
+          </div>
+        </div>
+        <!-- filter modal -->
+        <div class="filter-modal">
+          <form action="" class="filter-form">
+            <table class="filter-table">
+              <thead>
+                <tr>
+                  <th>Last seen</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="filter-checkbox">
+                    <label class="custom-checkbox">
+                      <input type="checkbox" />
+                      <span class="checkmark"></span>
+                      Latest
+                    </label>
+                  </td>
+                  <td class="filter-checkbox">
+                    <input type="checkbox" name="agent" id="agent-checkbox" />
+                    <label for="agent-checkbox">Agent</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="filter-checkbox">
+                    <input type="checkbox" name="later" id="later-checkbox" />
+                    <label for="later-checkbox">Later</label>
+                  </td>
+                  <td class="filter-checkbox">
+                    <input
+                      type="checkbox"
+                      name="individual"
+                      id="individual-checkbox"
+                    />
+                    <label for="individual-checkbox">Individual</label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button>Apply</button>
+          </form>
+        </div>
+
+        <table id="table" class="display" style="width: 100%">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>Last seen</th>
+              <th>Type</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <!-- <tr class="table-row">
+              <td class="nameonaccount">
+                <a href="users-profile.html">Name on Account</a>
+              </td>
+              <td>08123456789</td>
+              <td>personsname@gmail.com</td>
+              <td>DD/MM/YYYY</td>
+              <td>Individual</td>
+              <td id="closest-container">
+                <span class="material-icons-outlined more-vert">more_vert</span>
+                <ul id="edit-delete">
+                  <li class="edit">Delete</li>
+                  <li class="delete">Edit</li>
+                </ul>
+              </td>
+            </tr> -->
+            <!-- <tr class="table-row">
+              <td class="nameonaccount">
+                <a href="users-profile.html">Name on Account</a>
+              </td>
+              <td>08123456789</td>
+              <td>personsname@gmail.com</td>
+              <td>DD/MM/YYYY</td>
+              <td>Agent</td>
+              <td id="closest-container">
+                <span class="material-icons-outlined more-vert">more_vert</span>
+                <ul id="edit-delete">
+                  <li class="edit">Delete</li>
+                  <li class="delete">Edit</li>
+                </ul>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+
+        <div class="pagination" id="pagination-container">
+          <ul>
+            
+          </ul>
+          <!-- <button id="prevBtn">Previous</button>
+          <span id="currentPage"></span>
+          <button id="nextBtn">Next</button> -->
+        </div>
+
+        <!-- CREATE ACCOUNT MODAL -->
+        <div class="create-account-modal">
+          <div class="create-account-modal-content">
+            <h1>Create Account</h1>
+            <form action="#" method="post">
+              <div class="inputs">
+                <input
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  placeholder="First Name"
+                  required
+                />
+                <input
+                  type="text"
+                  name="lastname"
+                  id="lastname"
+                  placeholder="Last Name"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  required
+                />
+                <input
+                  type="text"
+                  name="phonenumber"
+                  id="phonenumber"
+                  placeholder="Phone Number"
+                  required
+                />
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <h2>Account Type</h2>
+              <div class="checkbox-type">
+                <label for="individual"
+                  ><input type="checkbox" name="individual" id="individual" />
+                  Individual</label
+                >
+                <label for="owner"
+                  ><input type="checkbox" name="owner" id="owner" /> Property
+                  Owner</label
+                >
+                <label for="agent"
+                  ><input type="checkbox" name="agent" id="agent" /> Property
+                  Agent</label
+                >
+              </div>
+              <div class="submit">
+                <input type="submit" value="Add Account" id="submit-btn" />
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- -------- SUCCESS MODAL ---------- -->
+        <div class="success-modal">
+          <div class="success-modal-content">
+            <h1>Account Created</h1>
+            <img src="assets/images/grommet-icons_status-good.png" alt="" />
+          </div>
+        </div>
+      </section>
     </main>
-    
-
-    
-
-
-
-
 
     <!-- FONTAWESOME JS LINK -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+      integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- CUSTOM JS LINK -->
-    <script src="assets/main.js"></script>
-</body>
+    <script src="assets/agents.js"></script>
+    <!-- <script src="assets/main.js"></script> -->
+  </body>
 </html>
