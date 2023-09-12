@@ -49,8 +49,6 @@ const data = [
     type: "Agent",
   },
 
-
-
   {
     id: 1,
     nameOnAccount: "John Doe",
@@ -165,7 +163,6 @@ const data = [
     dob: "DD/MM/YYYY",
     type: "Agent",
   },
-
 
   {
     id: 1,
@@ -482,7 +479,8 @@ const paginationElement = document.querySelector(".pagination ul");
 function renderData() {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const rows = data.slice(startIndex, endIndex).map((item) => `
+  const rows = data.slice(startIndex, endIndex).map(
+    (item) => `
     <tr class="table-row">
       <td class="nameonaccount">
         <a href="users-profile.html">${item.nameOnAccount}</a>
@@ -492,14 +490,15 @@ function renderData() {
       <td>${item.dob}</td>
       <td>${item.type}</td>
       <td id="closest-container">
-        <span class="material-icons-outlined more-vert">more_vert</span>
+        <span class="material-icons-outlined more-vert" id="more-vert">more_vert</span>
         <ul id="edit-delete">
           <li class="edit">Delete</li>
           <li class="delete">Edit</li>
         </ul>
       </td>
     </tr>
-  `);
+  `
+  );
   tableBody.innerHTML = rows.join("");
 }
 
@@ -514,7 +513,9 @@ function createPagination(totalPages, currentPage) {
       liTag += `<li class="${active}"><span>${page}</span></li>`;
     }
   } else {
-    liTag += `<li class="btn prev" onclick="changePage(${currentPage - 1})"><span>&#60</span></li>`;
+    liTag += `<li class="btn prev" onclick="changePage(${
+      currentPage - 1
+    })"><span>&#60</span></li>`;
 
     if (currentPage > 2) {
       liTag += `<li><span>1</span></li>`;
@@ -538,11 +539,12 @@ function createPagination(totalPages, currentPage) {
     }
   }
 
-  liTag += `<li class="btn next" onclick="changePage(${currentPage + 1})"><span>></span></li>`;
+  liTag += `<li class="btn next" onclick="changePage(${
+    currentPage + 1
+  })"><span>></span></li>`;
 
   paginationElement.innerHTML = liTag;
 }
-
 
 function changePage(newPage) {
   if (newPage < 1 || newPage > totalPages) {
@@ -553,6 +555,35 @@ function changePage(newPage) {
   renderData();
   createPagination(totalPages, currentPage);
 }
+
+tableBody.addEventListener("click", (e) => {
+  let openEditDelete = null;
+  if (e.target.classList.contains("more-vert")) {
+    const icon = e.target;
+    const parentContainer = icon.closest("#closest-container");
+    const editDelete = parentContainer.querySelector("#edit-delete");
+
+    if (openEditDelete && openEditDelete !== editDelete) {
+      openEditDelete.style.display = "none";
+    }
+
+    editDelete.style.display =
+      editDelete.style.display === "block" ? "none" : "block";
+
+    openEditDelete = editDelete.style.display === "block" ? editDelete : null;
+
+    e.stopPropagation();
+  }
+});
+
+document.addEventListener("click", (event) => {
+  const editDeletes = document.querySelectorAll("#edit-delete");
+  editDeletes.forEach((editDelete) => {
+    if (!editDelete.contains(event.target)) {
+      editDelete.style.display = "none";
+    }
+  });
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   renderData();
@@ -579,11 +610,6 @@ document.addEventListener("DOMContentLoaded", function () {
 //   });
 // }
 
-
-
-
-
-
 // ----------------FILTER MODAL-------------------
 const openFilter = document.querySelector("#open-filter");
 const filterModal = document.querySelector(".filter-modal");
@@ -595,7 +621,6 @@ openFilter.addEventListener("click", (event) => {
   event.stopPropagation();
   filterModal.style.display = "flex";
 });
-
 
 window.addEventListener("click", (event) => {
   if (event.target !== filterModal && !filterModal.contains(event.target)) {
@@ -659,36 +684,4 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closeModal();
   }
-});
-
-const iconBtn = document.querySelectorAll(".more-vert");
-let openEditDelete = null;
-
-iconBtn.forEach((icon) => {
-  icon.addEventListener("click", (event) => {
-    
-    const parentContainer = icon.closest("#closest-container");
-    const editDelete = parentContainer.querySelector("#edit-delete");
-    console.log("coldughds");
-    if (openEditDelete && openEditDelete !== editDelete) {
-      openEditDelete.style.display = "none";
-    }
-
-    editDelete.style.display =
-      editDelete.style.display === "block" ? "none" : "block";
-
-    openEditDelete = editDelete.style.display === "block" ? editDelete : null;
-
-    event.stopPropagation();
-    console.log("coldughds");
-  });
-});
-
-document.addEventListener("click", (event) => {
-  const editDeletes = document.querySelectorAll("#edit-delete");
-  editDeletes.forEach((editDelete) => {
-    if (!editDelete.contains(event.target)) {
-      editDelete.style.display = "none";
-    }
-  });
 });
